@@ -38,3 +38,40 @@ let statistics = calc(scores: [10, 5, 100, 50, 1, -5])
 print(statistics.0)
 print(statistics.1)
 print(statistics.2)
+
+
+func aninhada() -> Int {
+	var y = 10
+	
+	func add() {
+		y += 1
+	}
+	add()
+	return y
+}
+
+
+print("cada clique adiciona +1. O resultado é:  \(aninhada())")
+
+func addOne() -> ((Int) -> Int) {
+	func addN (number: Int) -> Int {
+		return 1 + number
+	}
+	return addN(number:)
+}
+var i = addOne()
+i(1)
+
+
+var numbers = [20, 10, 15, 99, 1, 55]
+
+numbers.map({ (number: Int) -> Int in
+	let result = 3 * number
+	return result
+})
+
+let mapped = numbers.map({number in 3 * number})
+
+let sorted = numbers.sorted {$0 > $1}
+
+
